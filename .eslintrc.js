@@ -34,6 +34,7 @@ module.exports = {
       objects: 'always-multiline',
     }],
     'import/prefer-default-export': 0,
+    'import/no-unresolved': 'off',
     'linebreak-style': 0,
     'new-cap': 0,
     'no-alert': 'error',
