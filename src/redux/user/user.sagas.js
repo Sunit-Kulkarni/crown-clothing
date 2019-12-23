@@ -39,7 +39,7 @@ export function* signInWithGoogle() {
 
 export function* signInWithEmail({ payload : { email, password } }) {
   try {
-    const { user } = auth.signInWithEmailAndPassword(email, password);
+    const { user } = yield auth.signInWithEmailAndPassword(email, password);
     yield getSnapshotFromUserAuth(user);
   } catch (error) {
     yield put(signInFailure(error));
