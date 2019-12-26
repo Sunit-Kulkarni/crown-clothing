@@ -21,12 +21,12 @@ const SignUp = ({ signUpStart }) => {
       return;
     }
     signUpStart({ displayName, email, password });
-  }
+  };
 
   const handleChange = event => {
     const { name, value } = event.target;
     setCredentials({ ...userCredentials, [name]: value });
-  }
+  };
 
   return (
     <div className='sign-up'>
@@ -69,10 +69,10 @@ const SignUp = ({ signUpStart }) => {
       </form>
     </div>
   );
-}
+};
 
 const mapDispatchToProps = dispatch => ({
-  signUpStart: userCredentials => dispatch(signUpStart(userCredentials))
-})
+  signUpStart: userCredentials => dispatch(signUpStart(userCredentials)),
+});
 
 export default connect(null, mapDispatchToProps)(SignUp);

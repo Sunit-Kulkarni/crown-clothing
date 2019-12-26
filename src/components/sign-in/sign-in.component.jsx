@@ -6,21 +6,21 @@ import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actio
 import './sign-in.styles.scss';
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
-  const [userCrendentials, setCredentials] = useState({ 
-    email: '', 
-    password: '' 
+  const [userCrendentials, setCredentials] = useState({
+    email: '',
+    password: '',
   });
   const { email, password } = userCrendentials;
 
   const handleSubmit = async event => {
     event.preventDefault();
     emailSignInStart(email, password);
-  }
+  };
 
   const handleChange = event => {
     const { name, value } = event.target;
     setCredentials({ ...userCrendentials, [name]: value });
-  }
+  };
 
   return (
     <div className='sign-in'>
@@ -57,7 +57,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
       </form>
     </div>
   );
-}
+};
 
 const mapDispatchToProps = dispatch => ({
   googleSignInStart: () => dispatch(googleSignInStart()),
