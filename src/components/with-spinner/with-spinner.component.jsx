@@ -1,13 +1,12 @@
 import React from 'react';
 
-import { SpinnerOverlay, SpinnerContainer } from './with-spinner.styles';
+import Spinner from '../spinner/spinner.component';
 
-const withSpinner = WrappedComponent => ({ isLoading, ...otherProps }) => (isLoading ? (
-  <SpinnerOverlay>
-    <SpinnerContainer />
-  </SpinnerOverlay>
-) : (
-  <WrappedComponent {...otherProps} />
-));
+// eslint-disable-next-line react/display-name
+const withSpinner = WrappedComponent => ({ isLoading, ...otherProps }) => (
+  isLoading
+    ? <Spinner />
+    : <WrappedComponent {...otherProps} />
+);
 
 export default withSpinner;
